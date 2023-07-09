@@ -5,14 +5,13 @@
         function __construct(){
             
             $productsModel = new ProductsModel();
-            
-
-            $this->loadViews(["top", "add","bottom"]);
-            
-
+        
             if(isset($_POST["submit"])&&$this->checkData()){
                 $productsModel->createProduct($_POST["name"], $_POST["price"]);
+                header("Location: buy");
             }
+
+            $this->loadViews(["top", "add","bottom"]);
         }
 
         private function checkData(){
