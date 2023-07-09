@@ -1,0 +1,61 @@
+nav{
+    background-color: var(--main);
+    width: var(--navW);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font-size: 23px;
+}
+
+nav ul{
+    padding: 0px;
+}
+
+nav a{
+    width: auto;
+    display: block;
+    margin: 5px 10px;
+    border-radius: 7px;
+    height: fit-content;
+    transition: 0.25s;
+    
+    
+}
+nav a svg{
+    height: 35px;
+    vertical-align: top;
+    color: var(--mainBlue);
+}
+
+nav a p{
+    display: inline-block;
+    padding: 4.3px 10px;
+    margin: 0px;
+    vertical-align:top;
+    color: inherit;
+
+}
+
+nav a:hover{
+    background-color: var(--selected);
+}
+
+
+main{
+    position: fixed;
+    top: 0;
+    left: var(--navW);
+    width: calc(100vw - var(--navW));
+    height: 100vh;
+}
+
+main > *{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

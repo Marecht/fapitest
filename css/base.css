@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+:root{
+    --navW: 150px;
+}
+
+body{
+    background-color: var(--background);
+    padding: 0px;
+    margin: 0px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+h1{
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+li{
+    list-style: none;
+}
+
+form, .container{
+    background-color: var(--main);
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+fieldset{
+    background-color: var(--selected);
+    border: solid 1.5px var(--selected);
+    border-radius: 7px;
+
+    margin-bottom: 15px;
+}
+legend{
+    color: rgb(187, 187, 187)
+}
+
+label{
+    display: inline-block;
+    width: fit-content;
+}
+
+input, select{
+    background-color: var(--selected);
+    border: solid 1.5px var(--selected);
+    border-radius: 4px;
+    height: 16px;
+    transition: 0.25s;
+}
+
+input{
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+input:focus, select:focus{
+    outline: solid 0.5px rgba(0, 0, 0, 0.493);;
+}
+
+input:hover, select:hover{
+    background-color: rgba(0, 0, 0, 0.153);
+}
+
+
+input[type="number"]{
+    width: 40px;
+}
+input[type="submit"]{
+    display: block;
+    padding: 3px 10px;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+}
+
+select{
+height: 20px;
+width: max-content;
+
+}
+
+.currency{
+    display: inline-block;
+    color: gray;
+    font-size: 12px;
+    margin-left: 5px;
+}
+

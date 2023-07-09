@@ -1,0 +1,58 @@
+<form method="post" action="summary">
+    <fieldset>
+        <legend>Personal Info</legend>
+
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname" minlength="3" maxlength="40" required>
+
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname" minlength="3" maxlength="40" required>
+
+        <label  for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="tel">Phone Number</label>
+        <input type="tel" name="tel" id="tel" pattern="[0-9]{9}" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Product</legend>
+
+        <select name="product" id="product">
+            <option value='null'>---</option>
+            <?php
+                foreach ($products as $product) {
+                    echo "<option value='{$product['id']}' label='{$product['name']} - {$product['price']} CZK'>{$product['price']}</option>";
+                }
+            ?>
+        </select>
+    
+        <label for="count" style="display: inline;">x</label>
+        <input type="number" style="display: inline;" min="1" max="1000" name="count" id="count" value="1" required>
+
+        <div id="fPrice"></div>
+    </fieldset>
+
+    <input type="submit" name="submit" value="Buy">
+</form>
+
+
+
+<script>
+var product = document.getElementById("product");
+var count = document.getElementById("count");
+
+function calculateProduct() {
+    var price = product.options[product.selectedIndex].text* count.value;
+console.log();
+    if(product.value!="null"){
+        document.getElementById("fPrice").innerHTML = "Total: " +price+ " CZK + tax (" +parseFloat(price*0.21).toFixed(2)+ " CZK)";
+    }
+   
+    else document.getElementById("fPrice").innerHTML ="";
+}
+
+product.addEventListener("change", calculateProduct);
+count.addEventListener("change", calculateProduct);
+</script>
